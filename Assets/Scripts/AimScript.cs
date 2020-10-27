@@ -8,9 +8,11 @@ public class AimScript : MonoBehaviour
     // Start is called before the first frame update
     private Vector3 force = new Vector3(-1.0f,0.0f,0.0f);
     private GameObject a;
+    private AudioSource fireNoise;
     void Start()
     {
         a = transform.Find("Aim").gameObject;
+        fireNoise = transform.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class AimScript : MonoBehaviour
 
     void OnFire() {
         if (a.activeInHierarchy) {
-            Debug.Log("Fire");
+            fireNoise.Play();
             transform.GetComponent<Rigidbody2D>().AddForce(force * 500);
         }
     }
