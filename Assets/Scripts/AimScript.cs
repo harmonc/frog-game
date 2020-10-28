@@ -9,6 +9,9 @@ public class AimScript : MonoBehaviour
     private Vector3 force = new Vector3(-1.0f,0.0f,0.0f);
     private GameObject a;
     private AudioSource fireNoise;
+    public bool onLilyPad = true;
+    public GameObject currPad;
+
     void Start()
     {
         a = transform.Find("Aim").gameObject;
@@ -26,7 +29,7 @@ public class AimScript : MonoBehaviour
             p2.z = p1.z;
             float angle = Mathf.Atan2(p2.y - p1.y, p2.x - p1.x) * Mathf.Rad2Deg;
             Vector3 dir = new Vector3(0.0f, 0.0f, angle);
-            transform.localEulerAngles = dir;
+            transform.eulerAngles = dir;
             float dist = Vector3.Distance(p1, p2);
             float l = Mathf.Lerp(0, 3, Mathf.InverseLerp(0, 5, dist));
             float aim = Mathf.Clamp(l, 0, 3);
@@ -45,11 +48,12 @@ public class AimScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("On");   
+        onLilyPad = true;
+        currPad = collision.gameObject;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Off");
+        onLilyPad = false;
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class GlobalVariablesScript : MonoBehaviour
 {
     public static GlobalVariablesScript Instance;
-    public int test;
+    public Sprite jumping;
+    public Sprite still;
     void Awake()
     {
         if (Instance == null)

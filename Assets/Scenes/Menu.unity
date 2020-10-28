@@ -371,7 +371,7 @@ Transform:
   - {fileID: 934114884}
   - {fileID: 824224007}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179491161
 GameObject:
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 179491164}
   - component: {fileID: 179491163}
   m_Layer: 5
-  m_Name: Button
+  m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 179491164}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 324559302}
+        m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
+        m_MethodName: leftButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &179491164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &196544152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +568,7 @@ GameObject:
   - component: {fileID: 227366403}
   - component: {fileID: 227366402}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +635,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 227366403}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 324559302}
+        m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
+        m_MethodName: rightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &227366403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &324559301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -782,9 +806,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 324559300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd9d58a94ac24aca8eab1ff321bd598, type: 3}
+  m_Script: {fileID: 11500000, guid: f0778d0aa5e0e4dff9e753d4b287bd5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skins:
+  - jumping: {fileID: -8880592115729403525, guid: 015c7f4da94f14e7bbfa67f40ce94c1d, type: 3}
+    still: {fileID: 6664077674813044071, guid: 015c7f4da94f14e7bbfa67f40ce94c1d, type: 3}
+  - jumping: {fileID: 7446605714284501751, guid: a037114ba520e42aa9343dbfa8dafd18, type: 3}
+    still: {fileID: -5567890057445628996, guid: a037114ba520e42aa9343dbfa8dafd18, type: 3}
+  - jumping: {fileID: 7655030998347292879, guid: afc30226bacc641408e214a57f880370, type: 3}
+    still: {fileID: -6215460517249672063, guid: afc30226bacc641408e214a57f880370, type: 3}
+  selected: 0
+  vars: {fileID: 1909063056}
 --- !u!1 &328357752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,64 +1356,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911410775}
   m_CullTransparentMesh: 0
---- !u!1 &911696058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 911696060}
-  - component: {fileID: 911696059}
-  m_Layer: 0
-  m_Name: Skin Selector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &911696059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911696058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79006ec847ae649d8a0f501d1bb70e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skins:
-  - jumping: {fileID: 3913583290620560595, guid: 4aad67a29ca07465dbdfee8a75b4f6c8, type: 3}
-    still: {fileID: 4492036310738570528, guid: 4aad67a29ca07465dbdfee8a75b4f6c8, type: 3}
-  - jumping: {fileID: -8880592115729403525, guid: 015c7f4da94f14e7bbfa67f40ce94c1d, type: 3}
-    still: {fileID: 6664077674813044071, guid: 015c7f4da94f14e7bbfa67f40ce94c1d, type: 3}
-  - jumping: {fileID: 7655030998347292879, guid: afc30226bacc641408e214a57f880370, type: 3}
-    still: {fileID: -6215460517249672063, guid: afc30226bacc641408e214a57f880370, type: 3}
-  - jumping: {fileID: 76257030883563668, guid: 830d042d17317407c90ea5ae0bfbe625, type: 3}
-    still: {fileID: -6015350839607536252, guid: 830d042d17317407c90ea5ae0bfbe625, type: 3}
-  - jumping: {fileID: -4510447247540362501, guid: eb56d0e5597944433baab3babd8e6f06, type: 3}
-    still: {fileID: 6444487545053922845, guid: eb56d0e5597944433baab3babd8e6f06, type: 3}
-  - jumping: {fileID: 3549970125358257323, guid: 4d4afcc410e0f4fe3810cd88c1d95270, type: 3}
-    still: {fileID: 63650544518111635, guid: 4d4afcc410e0f4fe3810cd88c1d95270, type: 3}
-  - jumping: {fileID: -8049946249156377532, guid: d0ac28df3d53048d7a33a0b511fb28ff, type: 3}
-    still: {fileID: -8670622884418805598, guid: d0ac28df3d53048d7a33a0b511fb28ff, type: 3}
---- !u!4 &911696060
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911696058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.737134, y: 1.1073503, z: -5.543421}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933057638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1763,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 324559302}
+        m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
+        m_MethodName: backButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2362,7 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41428f68c591d47f392e3f2422035261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
+  jumping: {fileID: 3913583290620560595, guid: 4aad67a29ca07465dbdfee8a75b4f6c8, type: 3}
+  still: {fileID: 4492036310738570528, guid: 4aad67a29ca07465dbdfee8a75b4f6c8, type: 3}
 --- !u!4 &1909063057
 Transform:
   m_ObjectHideFlags: 0
@@ -2375,7 +2363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937267543
 GameObject:
