@@ -28,9 +28,11 @@ public class SelectionMenuScript : MonoBehaviour
         img.sprite = skins[selected].still;
     }
 
-    public void backButton() {
+    public void backButton()
+    {
         vars.jumping = skins[selected].jumping;
         vars.still = skins[selected].still;
+        JsonUtility.ToJson(this);
     }
 }
 [System.Serializable]
