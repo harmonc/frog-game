@@ -48,12 +48,18 @@ public class AimScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        onLilyPad = true;
-        currPad = collision.gameObject;
+        if (collision.tag.Equals("Lilypad"))
+        {
+            onLilyPad = true;
+            currPad = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        onLilyPad = false;
+        if (collision.tag.Equals("Lilypad"))
+        {
+            onLilyPad = false;
+        }
     }
 }
