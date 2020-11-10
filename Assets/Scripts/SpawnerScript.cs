@@ -7,6 +7,7 @@ public class SpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject spawnable;
     public Vector2 range;
+    public bool xAxis = false;
     public float t;
     private float timer = 0;
     void Start()
@@ -22,7 +23,13 @@ public class SpawnerScript : MonoBehaviour
             timer = 0;
             GameObject spawned = Instantiate(spawnable);
             spawned.transform.position = transform.position;
-            spawned.transform.position += new Vector3(0.0f,Random.Range(range.x,range.y),0.0f);
+            if (xAxis) {
+                spawned.transform.position += new Vector3(Random.Range(range.x, range.y),0.0f, 0.0f);
+            }
+            else
+            {
+                spawned.transform.position += new Vector3(0.0f, Random.Range(range.x, range.y), 0.0f);
+            }
         }
     }
 }

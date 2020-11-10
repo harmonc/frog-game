@@ -53,6 +53,9 @@ public class AimScript : MonoBehaviour
             onLilyPad = true;
             currPad = collision.gameObject;
         }
+        if (collision.tag.Equals("Fly")) {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
