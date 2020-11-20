@@ -13,6 +13,9 @@ public class ConstantMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x <= -16.0f) {
+            Destroy(this.gameObject);
+        }
 
         if (goingUp)
         {

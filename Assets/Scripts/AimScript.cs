@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class AimScript : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class AimScript : MonoBehaviour
     private AudioSource fireNoise;
     public bool onLilyPad = true;
     public GameObject currPad;
-
+    public TextMeshProUGUI scoreText;
+    private int score = 0;
     void Start()
     {
         a = transform.Find("Aim").gameObject;
@@ -42,7 +44,7 @@ public class AimScript : MonoBehaviour
     void OnFire() {
         if (a.activeInHierarchy) {
             fireNoise.Play();
-            transform.GetComponent<Rigidbody2D>().AddForce(force * 500);
+            transform.GetComponent<Rigidbody2D>().AddForce(force * 1000); //500
         }
     }
 
@@ -55,6 +57,8 @@ public class AimScript : MonoBehaviour
         }
         if (collision.tag.Equals("Fly")) {
             Destroy(collision.gameObject);
+            score++;
+            scoreText.text = $"Score: {score}";
         }
     }
 

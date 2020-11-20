@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1262712705063826310}
   - component: {fileID: 1262712705063826311}
   - component: {fileID: 5669558008261057256}
+  - component: {fileID: 3129204275263001153}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Fly
@@ -121,3 +122,15 @@ CircleCollider2D:
   m_Offset: {x: 0.042623274, y: -0.0000000050810898}
   serializedVersion: 2
   m_Radius: 0.79398847
+--- !u!114 &3129204275263001153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262712705063826308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e915b3622f44994b1e8132fece5cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
